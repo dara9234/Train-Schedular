@@ -1,0 +1,31 @@
+
+    #train-table th,
+    td {
+      display: inline-block;
+      width: 16.575%;
+    }
+    .jumbotron{
+        /* /* background-color: black;  */
+         color: white;  
+        background-image: url("../images/train_4.jpg");
+    }
+ .card-header{
+     background-color: #8e5d40;
+     color: white; 
+     
+ }
+
+ /* #train-table{
+     background-color: #875940;
+ } */
+
+ .card-body{
+    background-color: #f5b591;
+    text-decoration-style: dashed ;
+ }
+
+ #add-train-btn{
+    background-color: #8e5d40;
+    color: white;
+ }
+
