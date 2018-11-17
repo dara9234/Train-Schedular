@@ -12,20 +12,26 @@
  .card-header{
      background-color: #8e5d40;
      color: white; 
-     
+     font-style: oblique    
  }
 
- /* #train-table{
-     background-color: #875940;
- } */
+ 
+    th {
+        text-align: left;
+    }
+ 
 
  .card-body{
     background-color: #f5b591;
-    text-decoration-style: dashed ;
  }
 
  #add-train-btn{
     background-color: #8e5d40;
     color: white;
+ }
+
+ .form-group{
+    color:black;
+    font-size: large
  }
 

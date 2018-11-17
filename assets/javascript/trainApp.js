@@ -77,7 +77,7 @@ database.ref().on("child_added",function(childSnapshot){
   
 
   // First train Time (pushed back 1 year to make sure it comes before current time)
-  var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+  var firstTrainConverted = moment(firstTrain, "HH:mm A").subtract(1, "years");
   // console.log(firstTrainTimeConverted);
 
   // Current Time
@@ -106,7 +106,7 @@ database.ref().on("child_added",function(childSnapshot){
  var newRow = $("<tr>").append(
   $("<td>").text(trainName),
   $("<td>").text(destName),
-  $("<td>").text(moment(firstTrainConverted).format("hh:mm")),
+  // $("<td>").text(moment(firstTrainConverted).format("hh:mm A")),
   $("<td>").text(frequency),
   $("<td>").text(moment(nextTrainTime).format("hh:mm A")),
   $("<td>").text(trainMinAway, "minutes"));
