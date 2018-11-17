@@ -19,14 +19,10 @@
 
   var database = firebase.database();
 
-  // Initial Values
-
-  // var trainName = "";
-  // var destName = "";
-  // var firstTrainTime = null;
-  // var frequencyMin = 0;
-  // var nextTrainTime = null;
-  // var trainMinAway = null;
+    var trainName ;
+    var destName ;
+    var frequency ;
+    var firstTrain;
 
   // caputure Button Click
 
@@ -35,10 +31,10 @@
     event.preventDefault();
 
     // Grabbed user input
-    var trainName = $("#train-name-input").val().trim();
-    var destName = $("#dest-input").val().trim();
-    var frequency = $("#freq-input").val().trim();
-    var firstTrain = $("#firstTrain-input").val().trim();
+    trainName = $("#train-name-input").val().trim();
+    destName = $("#dest-input").val().trim();
+    frequency = $("#freq-input").val().trim();
+    firstTrain = $("#firstTrain-input").val().trim();
 
     // Creates local temporary object for holding train data
 
@@ -56,7 +52,7 @@
 
     //Alert
 
-    alert("Train Successfully added");
+    // alert("Train Successfully added");
 
     // Clears all of the text-boxes
 	  $("#train-name-input").val("");
@@ -69,28 +65,24 @@
 //Firebase watcher + initial loader
 // It works similar to .on("value")
 
-database.ref().on("child_added",function(childSnapshot,prevChildKey){
+database.ref().on("child_added",function(childSnapshot){
 
   console.log(childSnapshot.val());
-  var trainName = childSnapshot.val().trainName;
-  var destName = childSnapshot.val().destName;
-  var frequency = childSnapshot.val().frequency;
-  var firstTrain = childSnapshot.val().firstTrain;
+   trainName = childSnapshot.val().trainName;
+   destName = childSnapshot.val().destName;
+  frequency = childSnapshot.val().frequency;
+  firstTrain = childSnapshot.val().firstTrain;
 
 
-  // Declare variable
-  // var frequency;
-
-  // Time is to be entered on the entry form
-  // var firstTrain = "03:30";
+  
 
   // First train Time (pushed back 1 year to make sure it comes before current time)
   var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
   // console.log(firstTrainTimeConverted);
 
   // Current Time
-  // var currentTime = moment();
-  // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  var currentTime = moment();
+  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm A" ));
 
   // Difference between the times
   var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
@@ -116,9 +108,8 @@ database.ref().on("child_added",function(childSnapshot,prevChildKey){
   $("<td>").text(destName),
   $("<td>").text(moment(firstTrainConverted).format("hh:mm")),
   $("<td>").text(frequency),
-  $("<td>").text(moment(nextTrainTime).format("hh:mm")),
-  $("<td>").text(moment.duration(trainMinAway, "minutes").humanize())
-);
+  $("<td>").text(moment(nextTrainTime).format("hh:mm A")),
+  $("<td>").text(trainMinAway, "minutes"));
  $("#train-table > tbody").append(newRow);
 
 

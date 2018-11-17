@@ -1,5 +1,12 @@
 # Train-Schedular
 
+•	I created a Firebase backed train schedule application
+•	Used HTML, CSS, and jQuery to render the schedule and admin panel on the web page.
+•	Used Firebase to host a globally available set of data that is retrieved and manipulated using Moment.js to provide up-to-date information about various trains' arrival times and minutes to arrival.
+
+
+Steps I did:
+
 * Creating a train schedule application that incorporates Firebase to host arrival and departure data. 
 * This app will retrieve and manipulate this information with Moment.js. 
 * This website will provide up-to-date information about various trains, namely their arrival times and how many    minutes remain until they arrive at their station.
