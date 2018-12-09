@@ -32,6 +32,10 @@
 
  .form-group{
     color:black;
-    font-size: large
+    font-size: large;
  }
 
+ .text-center > p 
+ {
+   margin-top: 50%;
+ }
